@@ -1,0 +1,3 @@
+################# Kubernetes ###################################
+kubectl cp mongo.dump mongodbtest-mongotest-0:/bitnami/mongodb -n mongotest
+kubectl cp data mongo-0:/bitnami -n mongotest
