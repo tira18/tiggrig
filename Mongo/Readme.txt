@@ -6,7 +6,7 @@ kubectl cp data mongo-0:/bitnami -n mongotest
 
 $ kubectl exec -it mongod-0 -c mongod-container-app bash
 root@mongod-0:/# hostname -f
-root@mongod-0:/# mongod-0.mongodb-service.default.svc.cluster.local
+root@mongod-0:/# mongodb-0.mongodb-service.mongo.svc.cluster.local
 
 ########################################
 
@@ -17,3 +17,5 @@ members: [
  { _id: 1, host: "mongodb-1.mongodb-service.mongo.svc.cluster.local:27017" }, 
  { _id: 2, host: "mongodb-2.mongodb-service.mongo.svc.cluster.local:27017" } ]});
  
+ root@mongod-1:/# mongo
+ >rs.secondaryOk()
