@@ -18,4 +18,4 @@ members: [
  { _id: 2, host: "mongodb-2.mongodb-service.mongo.svc.cluster.local:27017" } ]});
  
  root@mongod-1:/# mongo
- >rs.secondaryOk()
+ > rs.secondaryOk()
