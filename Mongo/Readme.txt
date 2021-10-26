@@ -11,7 +11,7 @@ root@mongod-0:/# mongod-0.mongodb-service.default.svc.cluster.local
 ########################################
 
 root@mongod-0:/# mongo
-> rs.initiate({ _id: "MainRepSet", version: 1, 
+> rs.initiate({ _id: "rs0", version: 1, 
 members: [ 
  { _id: 0, host: "mongodb-0.mongodb-service.mongo.svc.cluster.local:27017" }, 
  { _id: 1, host: "mongodb-1.mongodb-service.mongo.svc.cluster.local:27017" }, 
