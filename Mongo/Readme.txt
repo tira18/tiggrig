@@ -19,3 +19,8 @@ members: [
  
  root@mongod-1:/# mongo
  > rs.secondaryOk()
+
+
+db.adminCommand( { setFeatureCompatibilityVersion: "4.4" } )
+
+db.adminCommand( { getParameter: 1, featureCompatibilityVersion: 1 } )
