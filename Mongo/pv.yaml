@@ -1,0 +1,58 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: datadir-mongodb-0
+  namespace: mongo
+spec:
+  accessModes:
+  - ReadWriteOnce
+  azureDisk:
+    diskName: uat1-mongodb-node-1
+    diskURI: /subscriptions/64c81294-fc81-49e3-a0a3-ec9ccd261eb7/resourceGroups/rg-uat1-storage-weu/providers/Microsoft.Compute/disks/uat1-mongodb-node-1
+    kind: Managed
+    readOnly: false
+  capacity:
+    storage: 8Gi
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: managed-standart-retain
+  volumeMode: Filesystem
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: datadir-mongodb-1
+  namespace: mongo
+spec:
+  accessModes:
+  - ReadWriteOnce
+  azureDisk:
+    diskName: uat1-mongodb-node-2
+    diskURI: /subscriptions/64c81294-fc81-49e3-a0a3-ec9ccd261eb7/resourceGroups/rg-uat1-storage-weu/providers/Microsoft.Compute/disks/uat1-mongodb-node-2
+    kind: Managed
+    readOnly: false
+  capacity:
+    storage: 8Gi
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: managed-standart-retain
+  volumeMode: Filesystem
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: datadir-mongodb-2
+  namespace: mongo
+spec:
+  accessModes:
+  - ReadWriteOnce
+  azureDisk:
+    diskName: uat1-mongodb-node-3
+    diskURI: /subscriptions/64c81294-fc81-49e3-a0a3-ec9ccd261eb7/resourceGroups/rg-uat1-storage-weu/providers/Microsoft.Compute/disks/uat1-mongodb-node-3
+    kind: Managed
+    readOnly: false
+  capacity:
+    storage: 8Gi
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: managed-standart-retain
+  volumeMode: Filesystem
