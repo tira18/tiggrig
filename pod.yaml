@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:  
+  name: ${APP-NAME}
+  namespace: selsel  
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: ${APP-NAME}
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ${APP-NAME}
+        version: "1"
+    spec:
+      containers:
+      - image: ${IMAGE-NAME}
+        imagePullPolicy: Always
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 4444
+            scheme: HTTP
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        name: ${APP-NAME}
+        ports:
+        - containerPort: 4444
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 4444
+            scheme: HTTP
+          initialDelaySeconds: 20
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources:
+          limits:
+            cpu: "1"
+            ephemeral-storage: 5Gi
+            memory: 2Gi
+          requests:
+            cpu: 50m
+            ephemeral-storage: 2Gi
+            memory: 512Mi
+
+
