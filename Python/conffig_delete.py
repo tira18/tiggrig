@@ -7,7 +7,7 @@ kube_path = user_profile+"\\.kube\\"
 key = input("Enter the config name: ")
 username = ""
 clustername = ""
-yamlik = {'apiVersion': 'v1', 'clusters': [], 'contexts': [], 'users': [] }
+yamlik = {'apiVersion': 'v1', 'clusters': [], 'kind': 'Config', 'contexts': [], 'users': [] }
 with open(kube_path+"config") as f:    
     pod = yaml.safe_load(f) 
     contexts = pod['contexts']
