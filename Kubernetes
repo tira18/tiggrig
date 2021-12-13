@@ -3,3 +3,13 @@ kubectl delete pods <pod> --grace-period=0 --force
 
 
 kubectl exec -t -n fimv testsfimv-c748fc6f8-zw9kf -- /bin/bash -c  "rm -r /usr/share/nginx/html/ "
+
+
+
+##########CERT################################
+certbot --manual --preferred-challenges dns certonly -d fimapps.dev
+
+kubectl -n uat create secret tls new-tls-fimapps --cert=fullchain.pem --key=privkey.pem
+
+kubectl -n sonarqube create secret tls tls-secret --cert=localhost.crt --key=localhost.key
+
