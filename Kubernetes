@@ -1,3 +1,8 @@
+############## Nginx Version #######################
+
+kubectl exec -ti podname -n namespace -- /nginx-ingress-controller --version
+
+
 #########Force Delete Pod##################
 kubectl delete pods <pod> --grace-period=0 --force
 
