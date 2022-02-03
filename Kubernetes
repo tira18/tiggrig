@@ -19,5 +19,5 @@ kubectl -n uat create secret tls new-tls-fimapps --cert=fullchain.pem --key=priv
 kubectl -n sonarqube create secret tls tls-secret --cert=localhost.crt --key=localhost.key
 
 ################# Create Secret ######################
-kubectl create secret docker-registry imagepull --docker-server=http://nexus:8123 --docker-username=admin --docker-password=######## -n ams
+kubectl create secret docker-registry imagepull --docker-server='http://nexus.volo.local:8123' --docker-username='admin' --docker-password='*197Ost35' -n gitlabrunner
 
