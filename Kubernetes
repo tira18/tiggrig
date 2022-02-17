@@ -21,3 +21,6 @@ kubectl -n sonarqube create secret tls tls-secret --cert=localhost.crt --key=loc
 ################# Create Secret ######################
 kubectl create secret docker-registry imagepull --docker-server='http://nexus.volo.local:8123' --docker-username='admin' --docker-password='*197Ost35' -n gitlabrunner
 
+#################### GET AKS Credentials #######################
+az account set --subscription @@@@@@@@@@@@@@@@@@@@@
+az aks get-credentials --resource-group @@@@@@@@@@ --name @@@@@@@@@@@@@@
