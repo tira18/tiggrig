@@ -1,0 +1,5 @@
+When login to repository, in home direcotry create .npmrc with token
+
+//nexus.volo.local:8081/repository/:_authToken=NpmToken.4abac77c-2eca-3124-8b38-7c85738bf6f8
+@ng-volo:registry=http://nexus.volo.local:8081/repository/npm
+@raiser:registry=http://nexus.volo.local:8081/repository/npm
