@@ -1,3 +1,8 @@
+################# CREATE DOCKER SECRET #####################
+kubectl create secret docker-registry imagepull --docker-username=admin  --docker-password="*197Ost35" --docker-server="http://nexus:8123" -n ekofileimagepull
+
+
+
 ############## Nginx Version #######################
 
 kubectl exec -ti podname -n namespace -- /nginx-ingress-controller --version
